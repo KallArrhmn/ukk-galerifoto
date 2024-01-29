@@ -23,5 +23,5 @@ Route::get('/login', function () {
     return view('pages.login');
 })->name('login');
 
-Route::get('/register', [RegisterController::class, 'index']);
+Route::get('/register', [RegisterController::class, 'index'])->name('register.index');
 Route::post('/register', [RegisterController::class, 'processRegister'])->name('register.process');

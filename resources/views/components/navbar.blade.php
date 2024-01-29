@@ -18,7 +18,7 @@
         </ul>
       </div>
       <div>
-        <a href="{{ route('login')}}" class="btn btn-info text-white">Login</a>
+        <a href="{{ route('login')}}" class="btn btn-success text-white">Login</a>
       </div>
     </div>
 </nav>
