@@ -8,14 +8,14 @@
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">NIS</label>
-                    <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                    <input type="email" class="form-control" id="email" placeholder="Masukkan NIS">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" placeholder="Password">
+                    <input type="password" class="form-control" id="password" placeholder="Masukkan Password">
                 </div>
                 <button type="submit" class="btn btn-primary w-100 mb-3 mt-3">Login</button>
-                <p class="text-center mb-0">Belum punya akun? <a href="" class="text-decoration-none">daftar</a></p>
+                <p class="text-center mb-0">Belum punya akun? <a href="/register" class="text-decoration-none">daftar</a></p>
             </form>
         </div>
     </div>

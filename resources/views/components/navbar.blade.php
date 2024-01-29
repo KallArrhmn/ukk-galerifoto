@@ -15,10 +15,10 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Pricing</a>
           </li>
-          <div class="nav-item">
-            <a href="{{ route('login')}}" class="btn btn-info text-white">Login</a>
-          </div>
         </ul>
+      </div>
+      <div class="nav-item">
+        <a href="{{ route('login')}}" class="btn btn-info text-white">Login</a>
       </div>
     </div>
 </nav>

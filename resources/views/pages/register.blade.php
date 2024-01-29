@@ -8,11 +8,11 @@
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">Nama</label>
-                    <input type="email" class="form-control" id="email" placeholder="Masukkan Nama">
+                    <input type="text" class="form-control" id="name" placeholder="Masukkan Nama">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">NIS</label>
-                    <input type="email" class="form-control" id="email" placeholder="Masukkan NIS">
+                    <input type="number" class="form-control" id="nis" placeholder="Masukkan NIS">
                 </div>
                 <div class="mb-3">
                     <label for="email" class="form-label">Email</label>
