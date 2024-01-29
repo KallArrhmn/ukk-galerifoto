@@ -14,15 +14,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('layout.app');
-});
-
+    return view('layouts.app');
+})->name('home');
 
 Route::get('/login', function () {
-    return view('components.login');
-});
-
-Route::get('/register', function () {
-    return view('components.register');
-});
+    return view('pages.login');
+})->name('login');
 
