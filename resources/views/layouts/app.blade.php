@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.css') }}">
 </head>
 <body>
-    
+    @include('sweetalert::alert')
     @include('components.navbar')
 
     @yield('content')
