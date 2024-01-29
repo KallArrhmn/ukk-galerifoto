@@ -8,7 +8,7 @@
                 @csrf
                 <div class="mb-3">
                     <label for="email" class="form-label">NIS</label>
-                    <input type="email" class="form-control" id="email" placeholder="Masukkan NIS">
+                    <input type="number" class="form-control" id="nis" placeholder="Masukkan NIS">
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>

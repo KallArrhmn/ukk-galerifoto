@@ -17,7 +17,7 @@
           </li>
         </ul>
       </div>
-      <div class="nav-item">
+      <div>
         <a href="{{ route('login')}}" class="btn btn-info text-white">Login</a>
       </div>
     </div>
