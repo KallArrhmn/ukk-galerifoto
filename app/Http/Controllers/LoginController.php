@@ -25,7 +25,7 @@ class LoginController extends Controller
             Alert::success('Berhasil', 'Selamat datang di website kami');
             return redirect()->route('home');
         } else {
-            Alert::error('Gagal', 'NIS atau Password salah');
+            Alert::error('Gagal', 'NIS atau Password harus benar');
             return redirect()->route('login.index');
         }
     }

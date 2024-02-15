@@ -21,16 +21,15 @@
                 <div>
                     <a href="{{ route('login.index') }}" class="btn btn-success text-white">Login</a>
                 </div>
-            @else
+            @else			
                 <div class="dropdown">
                     <a class="btn text-white dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                         aria-expanded="false">
                         {{ Auth::User()->nama }}
                     </a>
-
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Profil</a></li>
-                        <li><a class="dropdown-item" href="#">Keluar</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}">Keluar</a></li>
                     </ul>
                 </div>
             @endif
