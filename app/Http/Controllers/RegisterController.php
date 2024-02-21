@@ -31,7 +31,7 @@ class RegisterController extends Controller
         ]);
 
         if ($user) {
-            Alert::success('Register berhasil silakan login');
+            Alert::success('Berhasil Register!', 'Silakan Login');
             return redirect()->route('login.index');
         } else {
             Alert::error('Register gagal silahkan coba lagi');

@@ -22,7 +22,7 @@ class LoginController extends Controller
 
         $credentials = $request->only('nis','password');
         if (Auth::attempt($credentials)) {
-            Alert::success('Berhasil', 'Selamat datang di website kami');
+            Alert::success('Berhasil Login!', 'Selamat datang di website kami');
             return redirect()->route('home');
         } else {
             Alert::error('Gagal', 'NIS atau Password harus benar');
