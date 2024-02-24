@@ -9,13 +9,19 @@
                 <div class="mb-3">
                     <label for="nis" class="form-label">NIS</label>
                     <input type="number" class="form-control" id="nis" name="nis" placeholder="Masukkan NIS">
+                    @error('nis')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Masukkan Password">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                    @error('password')
+                        <small class="text-danger">{{ $message }}</small>
+                    @enderror
                 </div>
                 <button type="submit" class="btn btn-primary w-100 mb-3 mt-3">Login</button>
-                <p class="text-center mb-0">Belum punya akun? <a href="{{ route('register.index')}}" class="text-decoration-none">Daftar</a></p>
+                <p class="text-center mb-0">Belum punya akun? <a href="{{ route('register.index') }}" class="text-decoration-none">daftar</a></p>
             </form>
         </div>
     </div>

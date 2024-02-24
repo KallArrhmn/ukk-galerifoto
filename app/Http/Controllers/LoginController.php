@@ -8,25 +8,24 @@ use RealRashid\SweetAlert\Facades\Alert;
 
 class LoginController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         return view('pages.login');
     }
 
-    public function processLogin(Request $request)
-    {
+    public function processLogin(Request $request) {
         $request->validate([
-            'nis' => ['required', 'integer', 'exists:users,nis'],
-            'password' => ['required', 'string']
+            'nis' => ['required', 'integer', 'min:9'],
+            'password' => ['required', 'string', 'min:3']
         ]);
 
-        $credentials = $request->only('nis','password');
-        if (Auth::attempt($credentials)) {
-            Alert::success('Berhasil Login!', 'Selamat datang di website kami');
+        $credentials = $request->only('nis', 'password');
+        if(Auth::attempt($credentials)) {
+            Alert::success('Selamat datang', 'di website kami!');
             return redirect()->route('home');
         } else {
-            Alert::error('Gagal', 'NIS atau Password harus benar');
-            return redirect()->route('login.index');
+            Alert::error('Login gagal!', 'Silakan coba lagi');
+            return redirect()->back();
         }
+
     }
 }

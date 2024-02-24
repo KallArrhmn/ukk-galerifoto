@@ -21,4 +21,8 @@ class Photo extends Model
     public function likedByUser() {
         return $this->hasMany(LikesPhoto::class, 'photo_id', 'id')->where('user_id', auth()->user()->id);
     }
+
+    public function likes() {
+        return $this->hasMany(LikesPhoto::class,'photo_id','id');
+    }
 }

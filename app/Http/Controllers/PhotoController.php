@@ -29,6 +29,30 @@ class PhotoController extends Controller
         return view('pages.home', compact('photos'));
     }
 
+    public function deletePhoto($photo_id)
+    {
+        $photo = Photo::find($photo_id);
+
+        if (!$photo) {
+            Alert::error('Foto tidak ditemukan');
+            return redirect()->back();
+        }
+
+        if ($photo->user_id != auth()->user()->id) {
+            Alert::error('Anda tidak memiliki izin untuk menghapus foto ini!');
+            return redirect()->back();
+        }
+
+        Storage::delete($photo->lokasi_file);
+
+        $photo->comments()->delete();
+        $photo->likes()->delete();
+        $photo->delete();
+
+        Alert::success('Foto berhasil dihapus');
+        return redirect()->route('home');
+    }
+
     public function postPhoto()
     {
         return view('pages.post_photo');
@@ -36,9 +60,8 @@ class PhotoController extends Controller
 
     public function postPhotoProcess(Request $request)
     {
-        // dd($request->all());
         $request->validate([
-            'photo' => ['required', 'image', 'mimes:jpg,png,jpeg', 'max:4096'],
+            'photo' => ['required', 'image', 'mimes:jpg,png,jpeg', 'max:100000'],
             'judul_foto' => ['required', 'max:255'],
             'deskripsi_foto' => ['required', 'min:3'],
         ]);
@@ -65,5 +88,13 @@ class PhotoController extends Controller
             return redirect()->back();
         }
     }
-}
 
+    //hapus foto postingan
+    public function deletePost($id)
+    {
+        $photo = Photo::where('id', $id);
+        $photo->delete();
+        Alert::success('Foto berhasil dihapus');
+        return redirect(route('home'));
+    }
+}
