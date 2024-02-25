@@ -57,9 +57,6 @@ Route::controller(ProfileController::class)->name('profile.')->group(function() 
     Route::get('/profile/{user_id}', 'people')->name('people');
 });
 
-Route::get('/profile/edit', 'ProfileController@edit')->name('profile.edit');
-Route::patch('/profile/update', 'ProfileController@update')->name('profile.update');
-
 Route::get('/logout', function() {
     if(auth()->check()) {
         auth()->logout();

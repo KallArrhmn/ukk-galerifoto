@@ -17,5 +17,5 @@
                 </a>
             @endforeach
         </div>
-    </div> q
+    </div>
 @endsection

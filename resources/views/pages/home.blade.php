@@ -5,7 +5,7 @@
         @foreach ($photos as $photo)
             <div class="col-10 col-md-3 mx-1 my-3 p-1 rounded shadow-lg">
                 <div class="d-flex justify-content-between align-items-center">
-                    <a href="{{ route('profile.people', $photo->user->id) }}"
+                    <a href="{{ route('profile.index', $photo->user->id) }}"
                         class="ms-3 mt-3 mb-4 d-flex justify-content-start align-items-center mb-2 text-decoration-none">
                         <img src="https://dummyimage.com/640x1:1/" alt="profile-picture" class="img-fluid rounded-circle"
                             width="50">
