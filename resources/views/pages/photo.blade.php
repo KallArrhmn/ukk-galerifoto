@@ -6,7 +6,7 @@
             <div class="d-flex justify-content-between align-items-center">
                 <div>
                     <a href="{{ route('profile.people', $data->user->id) }}" class="d-flex text-decoration-none">
-                        <img src="https://dummyimage.com/50x50" class="rounded-circle me-2 mb-2">
+                        <img src="{{ asset('assets/album/profile (1).jpg') }}" class="rounded-circle me-2 mb-2" width="50">
 
                         <div class="ms-2">
                             <span class="fs-5" style="color: black;">{{ $data->user->nama }}</span>
@@ -15,11 +15,43 @@
                     </a>
                 </div>
                 <div>
+                    {{-- @if (auth()->check() && $data->user_id == auth()->user()->id)
+                        <div class="dropdown d-inline position-relative mb-3">
+                            <a class="text-dark m-3 text-decoration-none" style="font-size: 35px;" href="#"
+                                role="text" data-bs-toggle="dropdown" aria-expanded="false">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="text-dark" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal">
+                                    <circle cx="12" cy="12" r="1"></circle>
+                                    <circle cx="19" cy="12" r="1"></circle>
+                                    <circle cx="5" cy="12" r="1"></circle>
+                                </svg>
+                            </a>
+                            <div
+                                class="dropdown-menu w-auto text-center bg-dark position-absolute start-50 translate-middle-x">
+                                <form action="{{ route('delete.post', $data->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <a type="submit" class="btn btn-outline-danger btn-sm m-1 text-danger"
+                                        style="width: 145px;"
+                                        onclick="return confirm('Apakah anda yakin ingin menghapus foto?')">Hapus</a>
+                                </form>
+                                <form action="" method="">
+                                    @csrf
+                                    <a type="submit" class="btn btn-outline-primary btn-sm m-1 text-primary"
+                                        style="width: 145px;"
+                                        onclick="return confirm('Apakah anda yakin ingin mengedit foto?')">Edit</a>
+                                </form>
+                                <a href="{{ url()->previous() }}" class="btn btn-outline-light btn-sm m-1 text-light"
+                                    style="width: 145px;" data-bs-toggle="dropdown">Cancel</a>
+                            </div>
+                        </div>
+                    @endif --}}
                     @if ($data->user->id === Auth::user()->id)
                         <form action="{{ route('delete.post', $data->id) }}" method="POST">
                             @csrf
                             <button class="btn btn-danger btn-sm">
-                                <i class="fas fa-trash">Delete</i>
+                                <i class="fas fa-trash"></i> Delete
                             </button>
                         </form>
                     @endif

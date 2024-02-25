@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="my-5 d-flex flex-column align-items-center">
-        <img src="https://dummyimage.com/640x1:1/" alt="profile-picture" width="200"
+        <img src="{{ asset('assets/album/profile (1).jpg') }}" alt="profile-picture" width="200"
             class="img-fluid rounded-circle mb-2 d-block" />
         <p class="fs-2 fw-semibold text-center">{{ $user->nama }}</p>
-        <p class="text-muted fs-6">Register at: {{ date('d-m-Y', strtotime($user->created_at)) }}</p>
+        <p class="text-muted fs-6">Register at: <br>{{ date('d - m - Y', strtotime($user->created_at)) }}</p>
     </div>
     <div class="d-flex justify-content-center shadow">
         <div class="w-75 row justify-content-center">

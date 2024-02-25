@@ -7,7 +7,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                     <a href="{{ route('profile.index', $photo->user->id) }}"
                         class="ms-3 mt-3 mb-4 d-flex justify-content-start align-items-center mb-2 text-decoration-none">
-                        <img src="https://dummyimage.com/640x1:1/" alt="profile-picture" class="img-fluid rounded-circle"
+                        <img src="{{ asset('assets/album/profile (1).jpg') }}" alt="profile-picture" class="img-fluid rounded-circle"
                             width="50">
                         <span class="ms-2 fs-5 text-dark">{{ $photo->user->nama }}</span>
                     </a>

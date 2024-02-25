@@ -73,4 +73,28 @@ class PhotoController extends Controller
         Alert::success('Foto berhasil dihapus');
         return redirect(route('home'));
     }
+
+    // public function deletePhoto($photo_id)
+    // {
+    //     $photo = Photo::find($photo_id);
+
+    //     if (!$photo) {
+    //         Alert::error('Foto tidak ditemukan');
+    //         return redirect()->back();
+    //     }
+
+    //     if ($photo->user_id != auth()->user()->id) {
+    //         Alert::error('Anda tidak memiliki izin untuk menghapus foto ini!');
+    //         return redirect()->back();
+    //     }
+
+    //     Storage::delete($photo->lokasi_file);
+
+    //     $photo->comments()->delete();
+    //     $photo->likes()->delete();
+    //     $photo->delete();
+
+    //     Alert::success('Foto berhasi dihapus');
+    //     return redirect()->route('home');
+    // }
 }
